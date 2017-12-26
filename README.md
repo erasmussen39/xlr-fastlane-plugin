@@ -12,20 +12,20 @@ The XL Release Fastlane plugin enables you interact with BMC Fastlane services. 
 
 #### Task : Lane Task ####
 
-_ Parameters _
+__ Parameters __
 
 Name | Description
 ------ | -------
-host | Name or ip address of the remote computer.
-username | SSH username for connection.
-password | SSH password for connection.
-repository | GIT repository to checkout (optional).  If blank, the target directory is used "as is" without a code checkout. 
-directory | Directory on the remote server to run fastlane.
-lane | The fastlane lane to invoke.
+Client Host | Fastlane host defined in Settings > Shared Configuration
+Git Project URL | GIT repository to checkout (optional).  If blank, the target directory is used "as is" without a code checkout. 
+Branch | GIT branch used
+Working Dir | Directory on the remote server to run fastlane.
+Lane | The fastlane lane to invoke.
+Options | Map of options passed to fastlane
 
 ## Requirements ##
 * **XL Release** 7.x
-ssh running on the target computer
+* ssh running on the target computer
 
 ## Installation ##
 
