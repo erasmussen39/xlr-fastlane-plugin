@@ -25,7 +25,9 @@ Options | Map of options passed to fastlane
 
 ## Requirements ##
 * **XL Release** 7.x
-* ssh running on the target computer
+* ssh running on the host computer
+* fastlane installed on host computer
+* <project directory>/fastlane/Fastfile with lane defined
 
 ## Installation ##
 
