@@ -14,6 +14,7 @@
 """
 import sys
 import time
+import re
 
 from com.xebialabs.overthere import CmdLine, ConnectionOptions, Overthere, OperatingSystemFamily
 from com.xebialabs.overthere.ssh import SshConnectionType
@@ -192,6 +193,11 @@ class OverthereSessionLogger(object):
 
 
 class StringUtils(object):
+
+    @staticmethod
+    def strip_ansi(s):
+        ansi_re = re.compile(r'\x1B\[[0-?]*[ -/]*[@-~]')
+        return ansi_re.sub('', s)
 
     @staticmethod
     def concat(sarray, delimiter='\n'):
@@ -485,8 +491,8 @@ class OverthereHostSession(object):
 
         if response.rc != 0 and check_success:
             if not suppress_streaming_output:
-                mdl.print_error(StringUtils.concat(response.stdout))
-                mdl.print_error(StringUtils.concat(response.stderr))
+                mdl.print_error(StringUtils.strip_ansi(StringUtils.concat(response.stdout)))
+                mdl.print_error(StringUtils.strip_ansi(StringUtils.concat(response.stderr)))
             raise Exception(response.rc)
 
         return response
