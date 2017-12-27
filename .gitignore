@@ -4,6 +4,7 @@ syntax: glob
 
 # Build output
 build/
+bin/
 
 # Mac
 .DS_Store

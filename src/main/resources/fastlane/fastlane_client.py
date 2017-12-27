@@ -9,12 +9,10 @@
 #
 
 import os
-import xml.etree.ElementTree as ET
 
-from here.xlr.overthere import LocalConnectionOptions, OverthereHost, OverthereHostSession, SshConnectionOptions
+from fastlane.overthere import LocalConnectionOptions, OverthereHost, OverthereHostSession, SshConnectionOptions
 from com.xebialabs.overthere import OperatingSystemFamily
-from here.xlr.markdown_logger import MarkdownLogger as mdl
-from here.git.logs import parser
+from fastlane.markdown_logger import MarkdownLogger as mdl
 
 
 class FastlaneClient(object):
@@ -30,6 +28,7 @@ class FastlaneClient(object):
             host_opts = SshConnectionOptions(ssh_host['address'], ssh_host['username'], password=ssh_host["password"],
                                              privateKeyFile=ssh_host["privateKeyFile"], **additional_props)
         self.host = OverthereHost(host_opts)
+
 
     @staticmethod
     def new_instance(git_dir, params, show_output=False):
@@ -52,34 +51,4 @@ class FastlaneClient(object):
                 for k in options.keys:
                     cmd.extend("%s:%s" % (k, options[k]))
 
-            self.execute_cmd(session, cmd, show_output=False)
-
-            # get result file
-            report_str = session.read_file("%s/fastlane/report.xml" % self.git_dir)
-
-            root = ET.fromstring(report_str)
-            cnt = 0
-            for failure in root.findall(".//failure"):
-                if cnt is 0:
-                    mdl.println("Failures:")
-
-                cnt += 1
-                msg = failure.attrib["message"]
-                idx = msg.rfind("\n\n")
-                mdl.print_code(msg[idx+2:])
-
-            if cnt > 0:
-                raise Exception("fastlane had %s failure(s)" % str(cnt))
-
-            mdl.println("Lane '%s' complete" % lane)
-
-    def execute_cmd(self, session, cmd_line, show_output=False):
-        mdl.println("Executing command line:")
-        mdl.print_code(" ".join(cmd_line))
-        with session:
-            result = session.execute(cmd_line)
-            if self.show_output or show_output:
-                mdl.println("Output:")
-                mdl.print_code("\n".join(result.stdout))
-            return result
-
+            session.execute_cmd(cmd, show_output=False)

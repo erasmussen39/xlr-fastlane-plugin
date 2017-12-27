@@ -21,7 +21,7 @@ from com.xebialabs.overthere.local import LocalFile
 from com.xebialabs.overthere.util import OverthereUtils, CapturingOverthereExecutionOutputHandler,\
     ConsoleOverthereExecutionOutputHandler, MultipleOverthereExecutionOutputHandler
 from java.lang import Integer
-from here.xlr.markdown_logger import MarkdownLogger as mdl
+from fastlane.markdown_logger import MarkdownLogger as mdl
 
 
 class LocalConnectionOptions(object):
@@ -433,6 +433,21 @@ class OverthereHostSession(object):
             target.setExecutable(executable)
         return target
 
+    def execute_cmd(self, cmd_line, show_output=False):
+        """
+        Logs command line and, optionally, output (stdout) of the command.
+        :param cmd_line: Command line as an Array of Strings.
+        :return: CommandResponse
+        """
+        mdl.println("Executing command line:")
+        mdl.print_code(" ".join(cmd_line))
+
+        result = self.execute(cmd_line)
+        if show_output:
+            mdl.println("Output:")
+            mdl.print_code("\n".join(result.stdout))
+
+        return result
 
     def execute(self, cmd, check_success=True, suppress_streaming_output=False):
         """
