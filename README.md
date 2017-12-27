@@ -2,9 +2,11 @@
 
 ## Preface ##
 
-This document describes the functionality provided by the XL Release fastlane plugin.  fastlane is an open source platform aimed at simplifying Android and iOS deployment.  The plugin gives you the ability to checkout a GIT repository and invoke a fastlane 'lane' on a remote server.
+This document describes the functionality provided by the XL Release fastlane plugin.  fastlane is an open source platform aimed at simplifying Android and iOS deployment.  This plugin gives you the ability to checkout a GIT repository and invoke a fastlane 'lane' on a remote server.
 
 See the **[XL Release Documentation](https://docs.xebialabs.com/xl-release/)** for background information on XL Release concepts.
+
+See the **[fastlane.tools](https://docs.fastlane.tools/)** documentation for more information about fastlane.
 
 ## Overview ##
 
@@ -12,7 +14,7 @@ The XL Release Fastlane plugin enables you interact with fastlane.tools services
 
 #### Task : Lane Task ####
 
-__ Parameters __
+_Parameters_
 
 Name | Description
 ------ | -------
@@ -27,9 +29,9 @@ Options | Map of options passed to fastlane
 * **XL Release** 7.x
 * ssh running on the host computer
 * fastlane installed on host computer
-* <project directory>/fastlane/Fastfile with lane defined
+* &lt;project directory&gt;/fastlane/Fastfile with lane defined
 
 ## Installation ##
 
 * Place the plugin JAR file into your `SERVER_HOME/plugins` directory.
-* Restart the server  
+* Restart the server

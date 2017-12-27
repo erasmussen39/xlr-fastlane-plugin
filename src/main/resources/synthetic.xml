@@ -35,7 +35,7 @@
 
         <property name="clientHost" category="input" label="Fastlane Host" required="false" kind="ci" referenced-type="fastlane.Host" description="Host with git client. If blank, local host is used."/>
 
-        <property name="gitCloneUrl"    category="input" label="Git Project" description="Example, 'git@github.com:xebialabs-community/xlr-relationships-visualization-plugin.git'"/>
+        <property name="gitCloneUrl"    category="input" label="Git Project" description="Example, 'git@github.com:xebialabs-community/xlr-relationships-visualization-plugin.git'" required="false"/>
         <property name="gitBranch"      category="input" label="Branch" default="master" description="Git branch to process" required="false"/>
         <property name="gitRepoBaseDir" category="input" label="Working Dir" default="/tmp" description="Working directory on remote host"/>
 
