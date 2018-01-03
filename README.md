@@ -14,6 +14,8 @@ The XL Release Fastlane plugin enables you interact with fastlane.tools services
 
 #### Task : Lane Task ####
 
+![FastlaneTask](images/fastlane_task.png)
+
 _Parameters_
 
 Name | Description
@@ -24,6 +26,12 @@ Branch | GIT branch used
 Working Dir | Directory on the remote server to run fastlane.
 Lane | The fastlane lane to invoke.
 Options | Map of options passed to fastlane
+
+#### Fastlane Host Configuration ####
+
+![FastlaneHost](images/fastlane_host.png)
+
+You will need to define one or more fastlane hosts.  For iOS apps, your a Mac host.  fastlane hosts are configured under Settings -> Shared Configuration.
 
 ## Requirements ##
 * **XL Release** 7.x
