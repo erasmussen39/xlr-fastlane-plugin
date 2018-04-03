@@ -1,0 +1,19 @@
+language: python
+python:
+- '2.7'
+- pypy
+deploy:
+  provider: releases
+  api_key:
+    secure:
+      secure: DKAuTDWPCOgkafrx90VCe2X2pMvA7PW2gKUDSCVrKaOsQGWohNqVx4usxtyaGd8NGgQW+8tReJZXUm9XZcJxtjkKtQuVt4BbWnwyIi/pZO8Z9xh7Q8gArDmR+2MUEOg1x3M+z2l5BW4Q6EvzJleG61inNVtaHqbZ/Sz4vD28qUpRQonWVkamJH2KAVjUGAPTTtf1hy/T9x0k3lON2L3Sq1SvD2nxBJTYgmqg1sg5IZcOzF3AqRuEe1I13OuIoF27RpMF89OYn8mtQ9t6/WSMRV3SZGD1vm3gzxBCDKFZxE/EwhzKq7zz2EZ4I+qILbLjNoMsV2BtAerq0rSWIhZcmjy+It+PZ7Pr7lf+WSfUtOSaNyLxjg218m/Ra3UstMVLSbmBji8XvGd8ey+z9RlplBv2H7NqtLT4HTzY6DGQ3W1duXfB26n9D0L8z+V9v58V4NgAsJKluSu1d5oxzD2oUtAIZZeTSR0VC1ZNTv5uOwHhaRnzNu7fqD5A54OGuRzACQuv2Z2W2Exao2aUHGBpH6FGBqXh8U2ABDfb8DweDH8kY96s2MbdJPdUKStyqocn1thGExdWJw8oCgZlgQ3CKyi4cUUzF+V9Yb/fpoEVGiqVf+WebdMavGxwgVu3zbWKfIKxvr4XMKf81UjEUlzbfRHdy92LHsnChK5t+9Re9MY=
+  file: build/libs/xlr-fastlane-plugin-1.0.jar
+  skip_cleanup: true
+  on:
+    all_branches: true
+    tags: true
+    repo: erasmussen39/xlr-fastlane-plugin
+notifications:
+  hipchat:
+    rooms:
+      secure: U3vRpeOmG2d/dXfO+HANsLoxVG1EsnJWkh6rRTbV/inS+zFb4nP6eLDuQEY7AIxYq8ttTPOD61kA9b47ks+nn7d/LqeYUMNs/kyK4E6WgBk7kP7N20kTC01GF74ieABlWEyBile0G0TUSjTvGg49tjhjUdKRqJ+WRYOwnT9CHxukL+Fm4qINGLle1dAhAFPjIZjXnb8QuHPLLrut8xeC2jdcFTbXt3mPsUw5Ykzg7WTp/EoohIrBJ+w2JZCLqUDdlk7A14T6Hz3b8pmyh+BdPiWZpSsS/FEcXlpKz/sM8q/vSaDX3cxeJ6OGpybuxoNqnM915974EuLyHNFsixVo3+ieVOCBlmTphSkgA/oYXxDRkM7yoxo0VO57nY/aGRiplpgtZTn24i1BPGK6IMCuOKk0Y2Tk/8eP09fUwWlqMfCwnpS2stDYgVUpcjxsDNM10NShBy2Xu01BWZndcWV1phwxYjcsQuBBy12b36YNWs2r+vQko2zb6VukjfweQ+sl8yIPPvRFPbMOd+TXgIBUjEKQ35t0i3YOkGZ0Z1XVj7x+WYA9lN6nZ/PNXT5pv3MuIT4S/Ozy744noPQeWq5xIiT3HwOkx4fyu5F76OQyYOVWH28r4DjH6nGnOtym7RULQNeU9SBDm6X+nJR/JHFkLBNFr/fEoRLgvJUXk91MHTc=
