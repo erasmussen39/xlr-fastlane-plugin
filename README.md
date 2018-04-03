@@ -1,5 +1,14 @@
 # XL Release Fastlane plugin v1.0.0
 
+[![Build Status](https://travis-ci.org/xebialabs-community/xlr-fastlane-plugin.svg?branch=master)](https://travis-ci.org/xebialabs-community/xlr-fastlane-plugin)
+[![License: MIT][xlr-fastlane-plugin-license-image]][xlr-fastlane-plugin-license-url]
+[![Github All Releases][xlr-fastlane-plugin-downloads-image]]()
+
+[xlr-fastlane-plugin-license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[xlr-fastlane-plugin-license-url]: https://opensource.org/licenses/MIT
+[xlr-fastlane-plugin-downloads-image]: https://img.shields.io/github/downloads/xebialabs-community/xlr-fastlane-plugin/total.svg
+
+
 ## Preface ##
 
 This document describes the functionality provided by the XL Release fastlane plugin.  fastlane is an open source platform aimed at simplifying Android and iOS deployment.  This plugin gives you the ability to checkout a GIT repository and invoke a fastlane 'lane' on a remote server.
