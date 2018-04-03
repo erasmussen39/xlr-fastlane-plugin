@@ -10,3 +10,8 @@ bin/
 .DS_Store
 
 plugin_context.md
+
+.settings
+.vscode
+.project
+.classpath
