@@ -1,6 +1,8 @@
 # XL Release Fastlane plugin v1.0.0
 
 [![Build Status](https://travis-ci.org/xebialabs-community/xlr-fastlane-plugin.svg?branch=master)](https://travis-ci.org/xebialabs-community/xlr-fastlane-plugin)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3703a8ba14f04387a81a31baabef9563)](https://www.codacy.com/app/erasmussen39/xlr-fastlane-plugin?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=xebialabs-community/xlr-fastlane-plugin&amp;utm_campaign=Badge_Grade)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a58f7283ded34a1fa1e4/maintainability)](https://codeclimate.com/github/xebialabs-community/xlr-fastlane-plugin/maintainability)
 [![License: MIT][xlr-fastlane-plugin-license-image]][xlr-fastlane-plugin-license-url]
 [![Github All Releases][xlr-fastlane-plugin-downloads-image]]()
 
